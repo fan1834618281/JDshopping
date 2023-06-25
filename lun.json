@@ -1,0 +1,31 @@
+[
+  {
+    "swiper":[
+      {
+        "id":1,
+        "pic":"./images/sw1.jpg"
+      },
+      {
+        "id":2,
+        "pic":"./images/sw2.avif"
+      },
+      {
+        "id":3,
+        "pic":"./images/sw3.jpg"
+      },
+      {
+        "id":4,
+        "pic":"./images/sw3.jpg"
+      },
+      {
+        "id":5,
+        "pic":"./images/sw3.jpg"
+      },
+      {
+        "id":6,
+        "pic":"./images/sw3.jpg"
+      }
+   
+    ]
+  }
+]

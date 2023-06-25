@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 思路：
+    先让其中任意盒子上去或者下去，因为要让俩盒子重合，
+    然后设置层级关系，让上面的小盒子的层级关系高，从而盖住下面的盒子
+    */
+    .one{
+      background-color: antiquewhite;
+      width: 200px;
+      height: 100px;
+      border: 1px solid blue;
+      /* 给one盒子设置相对定位，就是想遮住two盒子，而且想让这个盒子在上面就设置一下层级关系，层级关系越大，越在高层 */
+      position: relative;
+     bottom: -2px;
+     z-index: 1111111;
+    }
+    .one:hover{
+      border: 1px solid red;
+      border-bottom: none;
+    }
+
+    .two{
+      background-color: rgb(184, 250, 145);
+      position: relative;
+      top:-2px;
+      width: 600px;
+      height: 200px;
+      display: none;
+      z-index: 0;
+    }
+    /* 给外面盒子设置大小是因为如果不设置，aa是块级元素，随便hover那一行都显示two，其实我的目的是悬浮one显示two */
+    .aa{
+      width: 200px;
+      height: 100px;
+      position: relative;
+    }
+    /* 如果不是给aa盒子设置，那么俩盒子是同级，就不能悬浮one显示two */
+    .aa:hover .two{
+      display: block;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 其实我很奇怪，为什么悬浮one不能显示two，可能是只有父元素才能操作子元素 -->
+  <div class="aa">
+  <div class="one"></div>
+  <div class="two"></div>
+</div>
+</body>
+</html>
